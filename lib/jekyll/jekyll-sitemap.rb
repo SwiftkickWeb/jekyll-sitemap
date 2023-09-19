@@ -46,7 +46,7 @@ module Jekyll
     end
 
     def sitemap
-      site_map = PageWithoutAFile.new(@site, __dir__, "", "sitemap.xml")
+      site_map = PageWithoutAFile.new(@site, __dir__, "", "#{@site.config['sitemap-name'] || 'sitemap'}.xml")
       site_map.content = File.read(source_path).gsub(MINIFY_REGEX, "")
       site_map.data["layout"] = nil
       site_map.data["static_files"] = static_files.map(&:to_liquid)
