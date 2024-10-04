@@ -11,7 +11,6 @@ module Jekyll
     def generate(site)
       @site = site
       @site.pages << sitemap unless file_exists?("sitemap.xml")
-      @site.pages << robots unless file_exists?("robots.txt")
     end
 
     private
